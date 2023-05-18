@@ -15,7 +15,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">kind&lt;/span>: &lt;span style="color:#ae81ff">RecommendationRule&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">metadata&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">workloads-rule&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runInterval&lt;/span>: &lt;span style="color:#ae81ff">24h &lt;/span> &lt;span style="color:#75715e"># 每24h运行一次&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">resourceSelectors&lt;/span>: &lt;span style="color:#75715e"># 资源的信息&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">kind&lt;/span>: &lt;span style="color:#ae81ff">Deployment&lt;/span>
@@ -447,7 +447,7 @@ TargetRef&lt;/li>
 &lt;tr>
 &lt;td>specification-config&lt;/td>
 &lt;td>&amp;quot;&amp;quot;&lt;/td>
-&lt;td>资源规格，注意格式，详细的默认配置请见下方表格&lt;/td>
+&lt;td>资源规格，格式类似：2c4g,4c8g,2c5g,2c1g,0.25c0.25g,0.5c1g,4c16g，详细的默认配置请见下方表格&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>oom-protection&lt;/td>
@@ -463,6 +463,26 @@ TargetRef&lt;/li>
 &lt;td>oom-bump-ratio&lt;/td>
 &lt;td>1.2&lt;/td>
 &lt;td>OOM 内存放大系数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cpu-histogram-bucket-size&lt;/td>
+&lt;td>0.1&lt;/td>
+&lt;td>均衡桶的大小，同时也等于cpu推荐的最小值&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cpu-histogram-max-value&lt;/td>
+&lt;td>100&lt;/td>
+&lt;td>均衡桶的最大值，同时也等于cpu推荐的最大值&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mem-histogram-bucket-size&lt;/td>
+&lt;td>104857600&lt;/td>
+&lt;td>均衡桶的大小，同时也等于mem推荐的最小值&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mem-histogram-max-value&lt;/td>
+&lt;td>104857600000&lt;/td>
+&lt;td>均衡桶的最大值，同时也等于mem推荐的最大值&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
